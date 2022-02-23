@@ -542,8 +542,8 @@ async def scan_target(target):
 			info('Identified service {bmagenta}' + service.name + '{rst} on {bmagenta}' + service.protocol + '/' + str(service.port) + '{rst} on {byellow}' + target.address + '{rst}', verbosity=1)
 
 			if not config['only_scans_dir']:
-				with open(os.path.join(target.reportdir, 'notes.txt'), 'a') as file:
-					file.writelines('[*] ' + service.name + ' found on ' + service.protocol + '/' + str(service.port) + '.\n\n\n\n')
+				with open(os.path.join(target.reportdir, 'notes.md'), 'a') as file:
+					file.writelines('# ' + service.name + ' found on ' + service.protocol + '/' + str(service.port) + '.\n\n\n\n')
 
 			service.target = target
 
